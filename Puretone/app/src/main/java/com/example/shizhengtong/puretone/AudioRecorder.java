@@ -87,7 +87,7 @@ public class AudioRecorder {
         }
     }
 
-
+    //播放声音
     public void PlayRecord() {
         if(file == null){
             return;

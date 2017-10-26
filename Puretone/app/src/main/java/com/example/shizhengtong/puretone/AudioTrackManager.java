@@ -67,6 +67,17 @@ public class AudioTrackManager {
     }
 
     /**
+     * 暂停播放
+     */
+    public void pause(){
+        if(audioTrack!=null){
+            audioTrack.pause();
+            //audioTrack.release();
+            audioTrack=null;
+        }
+    }
+
+    /**
      * 停止播放
      */
     public void stop(){

@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements Runnable,View.OnC
                     REQUEST_EXTERNAL_STORAGE);
         }
         audio = new AudioTrackManager();
-        audio.start(240);
+
         thread = new Thread(this);
         isPlaySound = true;
         thread.start();
@@ -88,6 +88,7 @@ public class MainActivity extends AppCompatActivity implements Runnable,View.OnC
                 Thread thread = new Thread(new Runnable() {
                     @Override
                     public void run() {
+                        audio.start(400);
                         audioRecorder.StartRecord();
                         Log.e(TAG,"start");
                     }
@@ -100,6 +101,7 @@ public class MainActivity extends AppCompatActivity implements Runnable,View.OnC
                 audioRecorder.setRecording(false);
                 ButtonEnabled(true, false, true);
                 printLog("停止录音");
+                audio.pause();
                 break;
             case R.id.playAudio:
                 audioRecorder.PlayRecord();
