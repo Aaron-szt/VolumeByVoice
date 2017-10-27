@@ -88,8 +88,8 @@ public class MainActivity extends AppCompatActivity implements Runnable,View.OnC
                 Thread thread = new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        audio.start(400);
-                        audioRecorder.StartRecord();
+                        audio.start(8000);
+                        //audioRecorder.StartRecord();
                         Log.e(TAG,"start");
                     }
                 });
